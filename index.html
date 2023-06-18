@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Sorteio BingoemCasa</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<style>
+		.formulario {
+			display: flex;
+			flex-direction: column;
+			margin: 10%
+			/*width: 50%;*/
+		}
+		
+		#mensagem {
+			font-size: 3rem;
+			text-align: center;
+			color: black;
+		}
+
+		#idusuario {
+			font-size: 3rem;
+			text-align: center;
+			padding: 1.5rem;
+		}
+
+		#idbotao {
+			border: none;
+			background-color: green;
+			color: white;
+			font-size: 3rem;
+			/*border-radius: clamp(1rem, 2vw + 0.75rem, 1.5rem);*/
+			padding: 1.5rem;
+			text-align: center;
+		}
+
+		#semconta {
+			border: none;
+			background-color: green;
+			color: white;
+			font-size: 2rem;
+			margin-right: 50%;
+			padding: 0.8rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="formulario">
+		<h1 id="mensagem">Teste envio</h1>
+		<input id="idusuario" type='text' placeholder='Nome de usuário' />
+		<br>
+		<button id="idbotao" onClick="clicou()">Enviar e participar</button>
+		<br>
+		<button id="semconta" onclick="location.href='https://google.com';">Não tenho conta</button>
+	</div>
+</body>
+<script>
+	document.getElementById("idusuario").focus({ focusVisible: true });
+	function clicou() {
+		//document.getElementById("idusuario").value;//
+		document.getElementById("idbotao").innerHTML = "Você está participando!";
+		document.getElementById("idbotao").disabled = true;
+		//document.getElementById("idbotao").style.background = "Green";
+		//document.getElementById("idbotao").style.color = "black";
+	};
+	document.getElementById("idusuario").addEventListener("keypress", function(event) {
+		if (event.key === "Enter") {
+			document.getElementById("idbotao").click();
+		}
+	});
+</script>
+
+</html>
